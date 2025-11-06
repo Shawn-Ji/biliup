@@ -129,7 +129,7 @@ class Douyu(DownloadBase):
         self.raw_stream_url = f"{play_info['rtmp_url']}/{play_info['rtmp_live']}"
 
         # HACK: 构造 hs-h5 cdn 直播流链接
-        # self.douyu_cdn = 'hs-h5'
+        self.douyu_cdn = 'hs-h5'
         if self.douyu_cdn == 'hs-h5' and play_info['rtmp_cdn'] != 'hs-h5':
             if not self.__js_runable:
                 logger.warning(f"{self.plugin_msg}: 未找到 jsengine，无法构建 hs-h5 链接")
